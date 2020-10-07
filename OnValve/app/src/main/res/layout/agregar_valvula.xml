@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".registro_usuario">
+
+    <ImageButton
+        android:id="@+id/btnInicioApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/abc_vector_test"
+        tools:srcCompat="?attr/actionModeCloseDrawable"
+        android:onClick="IrAtrasInicio"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="388dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center"
+        android:lineSpacingExtra="10sp"
+        android:paddingTop="40dp"
+        android:text="Valvulas"
+        android:textAlignment="center"
+        android:textColor="#4FC3F7"
+        android:textIsSelectable="false"
+        android:textSize="55dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Por favor ingrese  los datos de la valvula" />
+
+    <EditText
+        android:id="@+id/txtnombre_valvula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre " />
+
+    <EditText
+        android:id="@+id/txtFabricante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fabricante" />
+
+    <EditText
+        android:id="@+id/txtSerial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Serial" />
+
+    <EditText
+        android:id="@+id/txtCorreoElectronicoUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Correo electrónico Usuario Asignado"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4DD0E1"
+        android:onClick="IrAtrasInicio"
+        android:text="Agregar Valvula"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo" />
+
+</LinearLayout>
