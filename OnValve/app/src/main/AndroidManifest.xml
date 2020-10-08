@@ -23,7 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".registro_usuario" />
+=======
+        <activity android:name=".registro_usuario"></activity>
+        <activity android:name=".agregar_valvula"/>
+>>>>>>> fb2d20f4294d8782199a592238eb2b2f18a94bd5
     </application>
 
-</manifest>

@@ -1,4 +1,4 @@
-package com.example.OnValve.Modelo;
+package com.example.onvalve.Modelo;
 
 public class Valvula
 {
@@ -57,3 +57,4 @@ public class Valvula
         this.ValvulaId = valvulaId;
     }
 }
+
