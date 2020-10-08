@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:232257502554:android:d7cf41d695fa5ab9678763",
+        "mobilesdk_app_id": "1:232257502554:android:0465d9a88d69b532678763",
         "android_client_info": {
-          "package_name": "com.example.onvalve"
+          "package_name": "com.example.OnValve"
         }
       },
       "oauth_client": [

@@ -1,18 +1,23 @@
-package com.example.onvalve;
+package com.example.OnValve;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.onvalve.Modelo.Usuario;
+import com.example.OnValve.Modelo.Usuario;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.UUID;
 
@@ -24,6 +29,7 @@ public class registro_usuario extends AppCompatActivity
     private EditText txtCorreoElectronico;
     private EditText txtContraseña;
     private EditText txtRepetirContraseña;
+    private  FirebaseAuth Auth;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -42,6 +48,7 @@ public class registro_usuario extends AppCompatActivity
         txtContraseña = findViewById(R.id.txtContraseña);
         txtRepetirContraseña = findViewById(R.id.txtRepetirContraseña);
         inicializarFirebase();
+        Auth = FirebaseAuth.getInstance();
     }
 
     private void inicializarFirebase()
@@ -110,7 +117,6 @@ public class registro_usuario extends AppCompatActivity
             return false;
         }
     }
-
     public void Registrarse(View view)
     {
         String nombres = txtNombres.getText().toString();
@@ -123,16 +129,46 @@ public class registro_usuario extends AppCompatActivity
 
         if(!contraseña.equals(repetirContraseña))
         {
-            Toast.makeText(this, "Los campos de contrseña no son iguales", Toast.LENGTH_LONG).show();
+            txtRepetirContraseña.setError("Las contraseñas no son iguales");
         }
         else if (this.DatosVacios())
         {
             validacion();
         }
+        else if(contraseña.length() < 7)
+        {
+            txtContraseña.setError("La contraseña debe tener mínimo 7 caracteres");
+        }
         else
         {
-            Usuario NuevoUsuario = new Usuario(nombres, apellidos, ciudad, correoElectronico, contraseña, UserId);
-            databaseReference.child("Usuario").child(NuevoUsuario.getUserId()).setValue(NuevoUsuario);
+            final Usuario NuevoUsuario = new Usuario(nombres, apellidos, ciudad, correoElectronico, contraseña);
+
+            Auth.createUserWithEmailAndPassword(correoElectronico, contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task)
+                {
+                    if(task.isSuccessful())
+                    {
+                        final String id = Auth.getCurrentUser().getUid();
+                        databaseReference.child("Usuarios").child(id).setValue(NuevoUsuario).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task2)
+                            {
+                                if(task2.isSuccessful())
+                                {
+                                    startActivity(new Intent(registro_usuario.this, perfil_usuario.class));
+                                    finish();
+                                }
+                                else
+                                {
+                                    Toast.makeText(registro_usuario.this, "no se registraron los datos correctamente", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
 
             txtNombres.setText("");
             txtApellidos.setText("");

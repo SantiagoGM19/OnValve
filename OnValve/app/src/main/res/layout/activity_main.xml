@@ -8,13 +8,6 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="274dp"
-        android:visibility="visible"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        tools:srcCompat="@android:color/background_light" />
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="93dp" />

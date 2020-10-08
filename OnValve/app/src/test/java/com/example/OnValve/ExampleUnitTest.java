@@ -1,4 +1,4 @@
-package com.example.onvalve;
+package com.example.OnValve;
 
 import org.junit.Test;
 

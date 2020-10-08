@@ -7,15 +7,14 @@
     android:background="#FAFAFA"
     android:orientation="vertical"
     android:padding="12dp"
-    tools:context=".registro_usuario">
+    tools:context=".agregar_valvula">
 
     <ImageButton
         android:id="@+id/btnInicioApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/abc_vector_test"
-        tools:srcCompat="?attr/actionModeCloseDrawable"
-        android:onClick="IrAtrasInicio"/>
+        tools:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,7 +23,7 @@
         android:layout_gravity="center"
         android:lineSpacingExtra="10sp"
         android:paddingTop="40dp"
-        android:text="BIENVENIDO"
+        android:text="Valvulas"
         android:textAlignment="center"
         android:textColor="#4FC3F7"
         android:textIsSelectable="false"
@@ -32,65 +31,49 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Por favor ingrese sus datos personales" />
+        android:text="Por favor ingrese  los datos de la valvula" />
 
     <EditText
-        android:id="@+id/txtNombres"
+        android:id="@+id/txtnombre_valvula"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombres" />
+        android:hint="Nombre " />
 
     <EditText
-        android:id="@+id/txtApellidos"
+        android:id="@+id/txtFabricante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Apellidos" />
+        android:hint="Fabricante" />
 
     <EditText
-        android:id="@+id/txtCiudad"
+        android:id="@+id/txtSerial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ciudad" />
+        android:hint="Serial" />
 
     <EditText
-        android:id="@+id/txtCorreoElectronico"
+        android:id="@+id/txtCorreoElectronicoUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Correo electrónico"
+        android:hint="Correo electrónico Usuario Asignado"
         android:inputType="textEmailAddress" />
 
-    <EditText
-        android:id="@+id/txtContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/txtVminimo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mínimo 7 caracteres"
-        android:textColor="#388E3C"
-        android:visibility="visible" />
-
-    <EditText
-        android:id="@+id/txtRepetirContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Repetir contraseña"
-        android:inputType="textPassword" />
-
     <Button
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#4DD0E1"
-        android:onClick="Registrarse"
-        android:text="@string/BotonRegistrarse"
+        android:onClick="RegistrarValvula"
+        android:text="Agregar Valvula"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

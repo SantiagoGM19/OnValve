@@ -1,4 +1,4 @@
-package com.example.onvalve.Modelo;
+package com.example.OnValve.Modelo;
 
 public class Usuario
 {
@@ -7,16 +7,14 @@ public class Usuario
     private String ciudad;
     private String correoElectronico;
     private String contraseña;
-    private String UserId;
 
-    public Usuario(String nombre, String apellido, String ciudad, String correoElectronico, String contraseña, String UserId)
+    public Usuario(String nombre, String apellido, String ciudad, String correoElectronico, String contraseña)
     {
         this.setNombre(nombre);
         this.setApellido(apellido);
         this.setCiudad(ciudad);
         this.setCorreoElectronico(correoElectronico);
         this.setContraseña(contraseña);
-        this.setUserId(UserId);
     }
 
     public String getNombre() {
@@ -59,12 +57,5 @@ public class Usuario
         this.contraseña = contraseña;
     }
 
-    public String getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(String userId) {
-        UserId = userId;
-    }
 }
 
