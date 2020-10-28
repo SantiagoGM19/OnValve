@@ -1,46 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF8F8"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:padding="12dp"
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="274dp"
-        android:visibility="visible"
-        app:srcCompat="@drawable/iconoapp"
-        tools:srcCompat="@android:color/background_light" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="93dp" />
+        android:id="@+id/imageView"
+        android:layout_width="448dp"
+        android:layout_height="303dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/grupo_6"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-20dp" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="162dp"
+        android:layout_height="47dp"
         android:layout_gravity="center"
-        android:background="#4DD0E1"
-        android:text="LOG IN"
+        android:background="@drawable/grupo_2"
         android:onClick="IrInicioSesion"
-        android:textAlignment="center" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.862"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnRegistrarse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="162dp"
+        android:layout_height="47dp"
         android:layout_gravity="center"
-        android:background="#4DD0E1"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/grupo_4"
         android:onClick="IniciarApp"
-        android:text="SIGN UP" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
