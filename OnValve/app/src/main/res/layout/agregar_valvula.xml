@@ -7,23 +7,15 @@
     android:background="#FAFAFA"
     android:orientation="vertical"
     android:padding="12dp"
-<<<<<<< HEAD
     tools:context=".agregar_valvula">
-=======
-    tools:context=".registro_usuario">
->>>>>>> fb2d20f4294d8782199a592238eb2b2f18a94bd5
 
     <ImageButton
         android:id="@+id/btnInicioApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="IrPerfilUsuario"
         app:srcCompat="@drawable/abc_vector_test"
-<<<<<<< HEAD
         tools:srcCompat="?attr/actionModeCloseDrawable" />
-=======
-        tools:srcCompat="?attr/actionModeCloseDrawable"
-        android:onClick="IrAtrasInicio"/>
->>>>>>> fb2d20f4294d8782199a592238eb2b2f18a94bd5
 
     <TextView
         android:id="@+id/textView2"
@@ -76,22 +68,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#4DD0E1"
-<<<<<<< HEAD
         android:onClick="RegistrarValvula"
-=======
-        android:onClick="IrAtrasInicio"
->>>>>>> fb2d20f4294d8782199a592238eb2b2f18a94bd5
         android:text="Agregar Valvula"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-<<<<<<< HEAD
         android:layout_height="wrap_content"/>
-=======
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo" />
->>>>>>> fb2d20f4294d8782199a592238eb2b2f18a94bd5
 
 </LinearLayout>

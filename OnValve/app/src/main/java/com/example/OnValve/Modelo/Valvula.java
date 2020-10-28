@@ -1,6 +1,8 @@
-package com.example.onvalve.Modelo;
+package com.example.OnValve.Modelo;
 
-public class Valvula
+import java.io.Serializable;
+
+public class Valvula implements Serializable
 {
     private String nombre;
     private String fabricante;
@@ -57,4 +59,3 @@ public class Valvula
         this.ValvulaId = valvulaId;
     }
 }
-

@@ -34,7 +34,8 @@ public class Iniciar_sesion extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
-
+        txtCorreoElectronico = findViewById(R.id.txtCorreoElectronico);
+        txtContraseña = findViewById(R.id.txtContraseña);
         Auth = FirebaseAuth.getInstance();
     }
 
@@ -83,7 +84,20 @@ public class Iniciar_sesion extends AppCompatActivity
         }
         else
         {
-            Auth.signInWithEmailAndPassword(correoElectronico, contraseña);
+            Auth.signInWithEmailAndPassword(correoElectronico, contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task)
+                {
+                    if(task.isSuccessful())
+                    {
+                        startActivity(new Intent(Iniciar_sesion.this, perfil_usuario.class));
+                    }
+                    else
+                    {
+                        Toast.makeText(Iniciar_sesion.this, "Ocurrió un error, por favor revise sus datos, sino está registrado por favor hágalo", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
         }
 
